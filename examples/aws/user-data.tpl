@@ -15,7 +15,7 @@ EOF
 cat > /tmp/replicated-settings.json <<EOF
 {
   "hostname": {
-    "value": "dan-ptfe-pes.hashidemos.io"
+    "value": "jiyeon-ptfe-pes.hashidemos.io"
   }
   "installation_type": {
     "value": "production"

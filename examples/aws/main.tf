@@ -40,7 +40,7 @@ module "network" {
 # demo/poc ptfe 
 #------------------------------------------------------------------------------
 
-module "demo" {
+/*module "demo" {
   source                 = "demo/"
   namespace              = "${var.namespace}"
   aws_instance_ami       = "${var.aws_instance_ami}"
@@ -71,7 +71,7 @@ module "pmd" {
   owner                  = "${var.owner}"
   ttl                    = "${var.ttl}"
 }
-
+*/
 #------------------------------------------------------------------------------
 # production external-services ptfe 
 #------------------------------------------------------------------------------
@@ -83,7 +83,7 @@ module "pes" {
   aws_instance_type      = "${var.aws_instance_type}"
   subnet_ids             = "${module.network.subnet_ids}"
   vpc_security_group_ids = "${module.network.security_group_id}"
-  user_data              = ""
+  user_data              = "user-data.tpl"
   ssh_key_name           = "${var.ssh_key_name}"
   hashidemos_zone_id     = "${data.aws_route53_zone.hashidemos.zone_id}"
   database_pwd           = "${random_pet.replicated-pwd.id}"
